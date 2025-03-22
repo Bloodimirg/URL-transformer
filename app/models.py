@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
 
-class URLRequest(BaseModel):
-    """Model for URL request"""
+class URL(BaseModel):
+    """Model for URL"""
     url: str
