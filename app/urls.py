@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import RedirectResponse
-from app.models import URLRequest
+from app.models import URL
 from app.services import add_url_to_db, get_original_url_from_db
 import httpx
 
@@ -8,7 +8,7 @@ router = APIRouter()
 
 
 @router.post("/", status_code=201)
-async def create_shortened_url(request: URLRequest):
+async def create_shortened_url(request: URL):
     original_url = request.url
     shortened_id = add_url_to_db(original_url)
     return {"shortened_url_id": shortened_id}
