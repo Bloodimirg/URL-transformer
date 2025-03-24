@@ -3,9 +3,12 @@
 Launch instructions:
 1. install and run docker
 2. build container and run app -> docker compose up --build
-3. Try POST-request long url:
+3. Try POST request long url:
 - Post request long URL
 ![img_1.png](img/POST_url.png)
 
 - Response short_url for redirect to original address (Location)
 ![img_2.png](img/GET_url.png)
+
+- You can use in browser on localhost:8000
+![img.png](img/public.png)
