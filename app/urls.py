@@ -1,10 +1,15 @@
 from fastapi import APIRouter, HTTPException
-from fastapi.responses import RedirectResponse
+from fastapi.responses import RedirectResponse, FileResponse
 from app.models import URL
 from app.services import add_url_to_db, get_original_url_from_db
 import httpx
 
 router = APIRouter()
+
+
+@router.get("/")
+async def root():
+    return FileResponse("public/index.html")
 
 
 @router.post("/", status_code=201)
